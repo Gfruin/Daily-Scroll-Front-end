@@ -26,5 +26,5 @@ Stretch Goals:
 
 WireFrames:
 -----------
-https://imgur.com/Y4PJbsi
-https://imgur.com/Y4PJbsi
+1. https://imgur.com/Y4PJbsi
+2. https://imgur.com/kkYjY9n
