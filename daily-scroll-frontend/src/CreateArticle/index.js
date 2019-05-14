@@ -26,7 +26,7 @@ class CreateArticle extends Component {
 					Description:
 					<input type="text" name="description" onChange={this.updateArticle}/>
 				</label>
-				<select name="category">
+				<select name="category" onChange={this.updateArticle}>
   					<option value="education">Education</option> 
   					<option value="technology" selected>Technology</option>
   					<option value="politics">Politics</option>
@@ -40,9 +40,11 @@ class CreateArticle extends Component {
   					<option value="science" selected>Science</option>
   					<option value="sports">Sports</option>
 				</select>
-					<input type ="Submit"/>
+					<input type="submit"/>
 			</form>
 
 			)
 	}
 }
+
+export default CreateArticle
