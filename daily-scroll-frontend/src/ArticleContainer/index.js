@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CreateArticle from '../CreateArticle/'
+import Articles from '../ArticleList'
 
 class ArticleContainer extends Component {
 	constructor() {
@@ -9,10 +10,27 @@ class ArticleContainer extends Component {
 
 		}
 	}
+	componentDidMount(){
+		this.getArticles()
+	}
+	getArticles = async () => {
+		try {
+			const response = await fetch('http://localhost:9000/api/v1/articles')
+			if(response.status !== 200) {
+				throw Error(response.statusText)
+			}
+			const articlesParsed = await response.json()
+			this.setState({articles: articlesParsed.data})
+
+		} catch(err) {
+			console.log(err)
+		}
+	}
 	render() {
 		return(
 			<div>
 				<CreateArticle/>
+				<Articles articles={this.state.articles}/>
 			</div>
 
 		)
