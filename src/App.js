@@ -6,7 +6,7 @@ import Register from './Register'
 import Login from './Login'
 
 class App extends Component {
-	constructor() {
+	constructor	() {
 		super();
 		this.state = {
 			logged: false,
