@@ -17,7 +17,7 @@ class CreateArticle extends Component {
 
 	render(){
 		return (
-			<form>
+			<form onSubmit={this.props.addArticle.bind(null,this.state)}>
 				<label>
 					Article:
 					<input type="text" name="title" onChange={this.updateArticle}/>

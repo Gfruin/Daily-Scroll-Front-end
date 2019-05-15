@@ -8,6 +8,7 @@ class ArticleContainer extends Component {
 		this.state = {
 			articles: [],
 
+
 		}
 	}
 	componentDidMount(){
@@ -26,10 +27,33 @@ class ArticleContainer extends Component {
 			console.log(err)
 		}
 	}
+
+	addArticle = async (article,e) => {
+		e.preventDefault()
+		console.log(article);
+		try {
+			const createdArticle = await fetch(process.env.REACT_APP_BACKEND_URL + 'articles', {
+				method: 'POST',
+				credentials: 'include',
+				body: JSON.stringify(article),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+
+			const parsedResponse = await createdArticle.json();
+			console.log(parsedResponse);
+
+			this.setState({articles: [...this.state.articles, parsedResponse.data]})
+
+		} catch(err) {
+			console.log(err)
+		}
+	}
 	render() {
 		return(
 			<div>
-				<CreateArticle/>
+				<CreateArticle addArticle={this.addArticle}/>
 				<Articles articles={this.state.articles}/>
 			</div>
 
