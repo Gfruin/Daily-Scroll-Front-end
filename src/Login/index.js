@@ -25,7 +25,7 @@ class Login extends Component {
 				}
 			})
 			const parsedResponse = await loginResponse.json()
-
+			console.log("here's parsedResponse", parsedResponse);
 			// if(parsedResponse.data === 'login successful') {
 
 			// }
