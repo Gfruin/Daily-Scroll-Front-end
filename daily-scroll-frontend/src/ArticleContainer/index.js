@@ -15,7 +15,7 @@ class ArticleContainer extends Component {
 	}
 	getArticles = async () => {
 		try {
-			const response = await fetch('http://localhost:9000/api/v1/articles')
+			const response = await fetch(process.env.REACT_APP_BACKEND_URL + 'articles')
 			if(response.status !== 200) {
 				throw Error(response.statusText)
 			}
