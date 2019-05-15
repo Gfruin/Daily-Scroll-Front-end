@@ -28,16 +28,16 @@ class CreateArticle extends Component {
 				</label>
 				<select name="category" onChange={this.updateArticle}>
   					<option value="education">Education</option> 
-  					<option value="technology" selected>Technology</option>
+  					<option value="technology">Technology</option>
   					<option value="politics">Politics</option>
   					<option value="business">Business</option> 
-  					<option value="local" selected>Local</option>
+  					<option value="local">Local</option>
   					<option value="national">National</option>
   					<option value="international">International</option> 
-  					<option value="opinion" selected>Opinion</option>
+  					<option value="opinion">Opinion</option>
   					<option value="entertainment">Entertainment</option>
   					<option value="health">Health</option> 
-  					<option value="science" selected>Science</option>
+  					<option value="science">Science</option>
   					<option value="sports">Sports</option>
 				</select>
 					<input type="submit"/>
