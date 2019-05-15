@@ -24,7 +24,7 @@ class Register extends Component {
 				}
 			})
 			const parsedResponse = await registerResponse.json();
-
+			console.log(parsedResponse);
 			// if(parsedResponse.data === 'registration successful') {
 
 			// }
