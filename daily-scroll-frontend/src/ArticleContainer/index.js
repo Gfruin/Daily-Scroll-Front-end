@@ -12,7 +12,7 @@ class ArticleContainer extends Component {
 		}
 	}
 	componentDidMount(){
-		this.getArticles()
+		this.getArticles()	
 	}
 	getArticles = async () => {
 		try {
@@ -37,7 +37,7 @@ class ArticleContainer extends Component {
 				credentials: 'include',
 				body: JSON.stringify(article),
 				headers: {
-					'Content-Type': 'application/json'
+					'Content-type': 'application/json'
 				}
 			})
 
