@@ -4,7 +4,7 @@ import './App.css';
 import ArticleContainer from './ArticleContainer/index'
 import Register from './Register'
 import Login from './Login'
-
+import NewsContainer from './NewsContainer'
 class App extends Component {
 	constructor	() {
 		super();
@@ -26,6 +26,7 @@ class App extends Component {
      	 	<ArticleContainer/>
      	 	<Register/>
      	 	<Login login={this.login}/>
+     	 	<NewsContainer/>
     	 	</div>
   		);
 	}
