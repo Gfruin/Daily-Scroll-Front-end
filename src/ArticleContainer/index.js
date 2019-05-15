@@ -124,13 +124,14 @@ class ArticleContainer extends Component {
 	}
 	render() {
 		return(
-			<div>
+			<div> 
 				<CreateArticle addArticle={this.addArticle}/>
 				<Articles 
 					articles={this.state.articles} 
 					showModal={this.showModal}
 					deleteArticle={this.deleteArticle}
 					/>
+
 				{
 					this.state.modalShowing 
 					?
