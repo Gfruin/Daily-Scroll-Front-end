@@ -24,6 +24,7 @@ class Register extends Component {
 					'Content-type': 'application/json'
 				}
 			})
+			console.log(registerResponse);
 			const parsedResponse = await registerResponse.json();
 			console.log("here's parsedResponse", parsedResponse);
 			// if(parsedResponse.data === 'registration successful') {
