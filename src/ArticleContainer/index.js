@@ -40,7 +40,7 @@ class ArticleContainer extends Component {
 					'Content-type': 'application/json'
 				}
 			})
-
+			console.log(createdArticle);
 			const parsedResponse = await createdArticle.json();
 			console.log(parsedResponse);
 
