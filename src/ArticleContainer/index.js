@@ -62,7 +62,7 @@ class ArticleContainer extends Component {
 		e.preventDefault();
 
 		try {
-			const editResponse = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/articles/' + this.state.movieToEdit._id, {
+			const editResponse = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/articles/' + this.state.articleToEdit._id, {
 				method: 'PUT',
 				credentials: 'include',
 				body: JSON.stringify(this.state.articleToEdit),
