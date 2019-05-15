@@ -16,7 +16,7 @@ class ArticleContainer extends Component {
 	}
 	getArticles = async () => {
 		try {
-			const response = await fetch(process.env.REACT_APP_BACKEND_URL + 'articles')
+			const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/articles')
 			if(response.status !== 200) {
 				throw Error(response.statusText)
 			}
@@ -32,7 +32,7 @@ class ArticleContainer extends Component {
 		e.preventDefault()
 		console.log(article);
 		try {
-			const createdArticle = await fetch(process.env.REACT_APP_BACKEND_URL + 'articles', {
+			const createdArticle = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/articles', {
 				method: 'POST',
 				credentials: 'include',
 				body: JSON.stringify(article),
