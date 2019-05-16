@@ -104,6 +104,7 @@ class ArticleContainer extends Component {
 			modalShowing: true,
 			articleToEdit: article
 		})
+
 	}
 
 	deleteArticle = async (id, e) => {
@@ -125,12 +126,12 @@ class ArticleContainer extends Component {
 	render() {
 		return(
 			<div> 
-				<CreateArticle addArticle={this.addArticle}/>
-				<Articles 
+				{this.state.modalShowing == false ?<CreateArticle addArticle={this.addArticle} /> : null}
+				 {this.state.modalShowing == false ?<Articles 
 					articles={this.state.articles} 
 					showModal={this.showModal}
 					deleteArticle={this.deleteArticle}
-					/>
+					/> : null } 
 
 				{
 					this.state.modalShowing 
