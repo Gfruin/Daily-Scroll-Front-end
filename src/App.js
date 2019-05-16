@@ -5,12 +5,13 @@ import ArticleContainer from './ArticleContainer/index'
 import Register from './Register'
 import Login from './Login'
 import NewsContainer from './NewsContainer'
+import Logout from './Logout'
 class App extends Component {
 	constructor	() {
 		super();
 		this.state = {
 			logged: false,
-			username: '',
+			username: ''
 		}
 	}
 	login = (username) => {
@@ -20,20 +21,22 @@ class App extends Component {
 
 		})
 	}
-
-	showRegister = () => {
-		console.log( "<-----here is the showModal");
+	logout = (username) => {
 		this.setState({
-			registered: true
+			logged: false,
+			username: username,
+
 		})
 	}
+
 	render() {
   		return (
 			<div className="App">
-     	 		{this.state.logged == true ? <ArticleContainer/> : null}
-     	 		{this.state.logged == true ? <Register/> : null}
-     	 		{this.state.logged == true ? <Login login={this.login}/> : null}
-     	 		<NewsContainer/>
+				<Logout logout={this.logout}/>
+     	 		{this.state.logged ? <ArticleContainer/> : null}
+     	 		{this.state.logged == false ? <Register/> : null}
+     	 		{this.state.logged == false ? <Login login={this.login}/> : null}
+     	 		<NewsContainer logged={this.state.logged}/>
     	 	</div>
   		);
 	}

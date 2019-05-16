@@ -8,7 +8,8 @@ class NewsContainer extends Component {
 		this.state = {
 			newsArticles: [],
 			searchTerm: '',
-			searchCountry: ''
+			searchCountry: '',
+			newSearch: false
 		}
 	}
 	handleChange = (e) => {
@@ -24,6 +25,11 @@ class NewsContainer extends Component {
 			const newsParsed = await newsResponse.json()
 			this.setState({newsArticles: newsParsed.data})
 			console.log(newsParsed);
+			console.log(this.state.searchTerm, "here is the searchTerm");
+			if(this.state.newSearch == false) {
+				this.setState({newSearch: true})
+			} 
+			console.log(this.state.newSearch);
 
 		} catch(err) {
 			console.log(err)
