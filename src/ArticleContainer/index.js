@@ -168,8 +168,8 @@ class ArticleContainer extends Component {
 				CreateArticle
 				</div>
 				{ this.state.modalShowing == false && this.state.displayCreate == true ?<CreateArticle 
-						addArticle={this.addArticle} 
-						displayIndex={this.displayIndex} /> : null}
+					addArticle={this.addArticle} 
+					displayIndex={this.displayIndex} /> : null}
 				 { this.state.modalShowing == false && this.state.displayIndex == true ? <Articles 
 					articles={this.state.articles} 
 					showModal={this.showModal}

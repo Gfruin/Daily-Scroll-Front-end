@@ -30,6 +30,7 @@ class Login extends Component {
 
 			// }
 			this.props.login(this.state.username, this.state.password)
+			this.props.hideResults()
 		} catch(err) {
 			console.log(err);
 		}

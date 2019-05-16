@@ -31,7 +31,7 @@ class Register extends Component {
 			// if(parsedResponse.data === 'registration successful') {
 
 			// }
-			
+			this.props.hideResults()
 
 		} catch(err) {
 			console.log(err);
