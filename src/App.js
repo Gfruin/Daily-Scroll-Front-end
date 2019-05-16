@@ -10,7 +10,7 @@ class App extends Component {
 		super();
 		this.state = {
 			logged: false,
-			username: ''
+			username: '',
 		}
 	}
 	login = (username) => {
@@ -20,13 +20,20 @@ class App extends Component {
 
 		})
 	}
+
+	showRegister = () => {
+		console.log( "<-----here is the showModal");
+		this.setState({
+			registered: true
+		})
+	}
 	render() {
   		return (
 			<div className="App">
-     	 	<ArticleContainer/>
-     	 	<Register/>
-     	 	<Login login={this.login}/>
-     	 	<NewsContainer/>
+     	 		{this.state.logged == true ? <ArticleContainer/> : null}
+     	 		{this.state.logged == true ? <Register/> : null}
+     	 		{this.state.logged == true ? <Login login={this.login}/> : null}
+     	 		<NewsContainer/>
     	 	</div>
   		);
 	}

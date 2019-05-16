@@ -6,7 +6,8 @@ class Register extends Component {
 
 		this.state = {
 			username: '',
-			password: ''
+			password: '',
+			registered: false
 		}
 	}
 	handleChange = (e) => {
@@ -30,6 +31,8 @@ class Register extends Component {
 			// if(parsedResponse.data === 'registration successful') {
 
 			// }
+			const nowRegistered = await this.state.showRegister()
+			console.log(nowRegistered);
 
 		} catch(err) {
 			console.log(err);
@@ -42,7 +45,7 @@ class Register extends Component {
 			<input type='text' name='username' onChange={this.handleChange} />
 			Password:
 			<input type='password' name='password' onChange={this.handleChange} />
-			<button type='submit'> Register </button>
+			<button>Submit</button>
 			</form>
 			)
 	}
