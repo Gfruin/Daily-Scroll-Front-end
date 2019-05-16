@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NewsArticles from '../NewsList'
 
 class NewsContainer extends Component {
 	constructor() {
@@ -6,7 +7,8 @@ class NewsContainer extends Component {
 
 		this.state = {
 			newsArticles: [],
-			searchTerm: ''
+			searchTerm: '',
+			searchCountry: ''
 		}
 	}
 	handleChange = (e) => {
@@ -32,8 +34,9 @@ class NewsContainer extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<input type='text' name='searchTerm' onChange={this.handleChange}/>
-					<button type='submit'> Search Bitch! </button>
+					<button type='submit'> Search! </button>
 				</form>
+				<NewsArticles newsArticles={this.state.newsArticles}/>
 			</div>
 			)
 	}
