@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewsArticles from '../NewsList'
+import Logout from '../Logout'
 
 class NewsContainer extends Component {
 	constructor() {
@@ -9,7 +10,7 @@ class NewsContainer extends Component {
 			newsArticles: [],
 			searchTerm: '',
 			searchCountry: '',
-			newSearch: false
+			searchSubmitted: false
 		}
 	}
 	handleChange = (e) => {
@@ -26,10 +27,10 @@ class NewsContainer extends Component {
 			this.setState({newsArticles: newsParsed.data})
 			console.log(newsParsed);
 			console.log(this.state.searchTerm, "here is the searchTerm");
-			if(this.state.newSearch == false) {
-				this.setState({newSearch: true})
-			} 
-			console.log(this.state.newSearch);
+
+			this.props.displayResults();
+
+			// console.log(this.state.newSearch);
 
 		} catch(err) {
 			console.log(err)
@@ -40,9 +41,9 @@ class NewsContainer extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<input type='text' name='searchTerm' onChange={this.handleChange}/>
-					<button type='submit'> Search! </button>
+					<button  type='submit'> Search! </button>
 				</form>
-				<NewsArticles newsArticles={this.state.newsArticles}/>
+				{ this.props.showResults === true ? <NewsArticles newsArticles={this.state.newsArticles}/> : null}
 			</div>
 			)
 	}

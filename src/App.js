@@ -6,12 +6,15 @@ import Register from './Register'
 import Login from './Login'
 import NewsContainer from './NewsContainer'
 import Logout from './Logout'
+
+
 class App extends Component {
 	constructor	() {
 		super();
 		this.state = {
 			logged: false,
-			username: ''
+			username: '',
+			showResults: false
 		}
 	}
 	login = (username) => {
@@ -29,14 +32,29 @@ class App extends Component {
 		})
 	}
 
+	displayResults = () => {
+		this.setState({
+			showResults: true
+		})
+	}
+
+	hideResults = () => {
+		this.setState({
+			showResults: false
+		})
+	}
+
 	render() {
   		return (
 			<div className="App">
-				<Logout logout={this.logout}/>
-     	 		{this.state.logged ? <ArticleContainer/> : null}
+				<Logout logout={this.logout} hideResults={this.hideResults}/>
+     	 		{this.state.logged ? <ArticleContainer /> : null}
      	 		{this.state.logged == false ? <Register/> : null}
      	 		{this.state.logged == false ? <Login login={this.login}/> : null}
-     	 		<NewsContainer logged={this.state.logged}/>
+     	 		<NewsContainer 
+     	 			showResults={this.state.showResults} 
+     	 			hideResults={this.hideResults}
+     	 			displayResults={this.displayResults} />
     	 	</div>
   		);
 	}

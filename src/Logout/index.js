@@ -22,6 +22,7 @@ class Logout extends Component {
 			console.log(logoutResponse, "here is the logout response");
 			this.props.logout(this.state.username, this.state.password, this.state.logged)
 			console.log(this.state.username, this.state.password, this.state.logged);
+			this.props.hideResults()
 		} catch(err) {
 			console.log(err);
 		}

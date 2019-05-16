@@ -15,9 +15,10 @@ class CreateArticle extends Component {
 		this.setState({[e.currentTarget.name]: e.currentTarget.value})
 	}
 
+
 	render(){
 		return (
-			<form onSubmit={this.props.addArticle.bind(null,this.state)}>
+			<form onSubmit={this.props.addArticle.bind(null, this.state)}>
 				<label>
 					Article:
 					<input type="text" name="title" onChange={this.updateArticle}/>
@@ -40,7 +41,7 @@ class CreateArticle extends Component {
   					<option value="science">Science</option>
   					<option value="sports">Sports</option>
 				</select>
-					<input type="submit"/>
+				<input type="submit"/>
 			</form>
 
 			)

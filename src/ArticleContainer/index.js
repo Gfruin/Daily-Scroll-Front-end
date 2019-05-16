@@ -14,7 +14,10 @@ class ArticleContainer extends Component {
 				description: '',
 				category: ''
 			},
-			modalShowing: false
+			modalShowing: false,
+			displayCreate: false,
+			displayShow: false,
+			displayIndex: false
 
 		}
 	}
@@ -52,6 +55,8 @@ class ArticleContainer extends Component {
 			console.log(parsedResponse);
 
 			this.setState({articles: [...this.state.articles, parsedResponse.data.newArticle]})
+
+			this.displayIndex();
 
 		} catch(err) {
 			console.log(err)
@@ -107,6 +112,7 @@ class ArticleContainer extends Component {
 
 	}
 
+
 	deleteArticle = async (id, e) => {
 		console.log(id, 'this is the id');
 		e.preventDefault();
@@ -123,15 +129,52 @@ class ArticleContainer extends Component {
 			console.log(err)
 		}
 	}
+	displayShow = () => {
+		this.setState({
+			displayShow: true,
+			displayCreate:false,
+			displayIndex: false
+		})
+	}
+	displayCreate = () => {
+		this.setState({
+			displayShow: false,
+			displayCreate:true,
+			displayIndex: false
+		})
+	}
+	displayIndex = () => {
+
+		console.log("displayIndex fired")
+
+		this.setState({
+			displayShow: false,
+			displayCreate:false,
+			displayIndex: true
+		})
+	}
+	resetDisplay = () => {
+		this.setState({
+			displayShow: false,
+			displayCreate:false,
+			displayIndex: false
+		})
+	}
+
 	render() {
 		return(
-			<div> 
-				{this.state.modalShowing == false ?<CreateArticle addArticle={this.addArticle} /> : null}
-				 {this.state.modalShowing == false ?<Articles 
+			<div>
+				<div onClick={this.displayCreate}>
+				CreateArticle
+				</div>
+				{ this.state.modalShowing == false && this.state.displayCreate == true ?<CreateArticle 
+						addArticle={this.addArticle} 
+						displayIndex={this.displayIndex} /> : null}
+				 { this.state.modalShowing == false && this.state.displayIndex == true ? <Articles 
 					articles={this.state.articles} 
 					showModal={this.showModal}
-					deleteArticle={this.deleteArticle}
-					/> : null } 
+					deleteArticle={this.deleteArticle} /> : null }
+
 
 				{
 					this.state.modalShowing 
@@ -140,6 +183,7 @@ class ArticleContainer extends Component {
 						articleToEdit={this.state.articleToEdit} 
 						closeAndEdit={this.closeAndEdit} 
 						handleFormChange={this.handleFormChange}
+
 					/> 
 					: 
 					null

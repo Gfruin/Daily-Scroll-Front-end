@@ -31,8 +31,7 @@ class Register extends Component {
 			// if(parsedResponse.data === 'registration successful') {
 
 			// }
-			const nowRegistered = await this.state.showRegister()
-			console.log(nowRegistered);
+			
 
 		} catch(err) {
 			console.log(err);
