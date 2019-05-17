@@ -146,6 +146,7 @@ class ArticleContainer extends Component {
 			displayCreate:true,
 			displayIndex: false
 		})
+		this.props.hideResults()
 	}
 	displayIndex = () => {
 

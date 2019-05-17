@@ -49,7 +49,7 @@ class App extends Component {
   		return (
 			<div className="App">
 				<Logout logout={this.logout} hideResults={this.hideResults}/>
-     	 		{this.state.logged ? <ArticleContainer /> : null}
+     	 		{this.state.logged ? <ArticleContainer hideResults={this.hideResults} /> : null}
      	 		{this.state.logged == false ? <Register hideResults={this.hideResults}/> : null}
      	 		{this.state.logged == false ? <Login login={this.login} hideResults={this.hideResults}/> : null}
      	 		<NewsContainer 
