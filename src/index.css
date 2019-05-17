@@ -15,3 +15,15 @@ code {
 .articleView {
 	border: 2px solid black;
 }
+
+.category {
+	font-size: 18px;
+}
+
+.source {
+	font-size: 18px;
+}
+
+.description {
+	font-size: 18px;
+}
