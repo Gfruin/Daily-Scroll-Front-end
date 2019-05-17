@@ -168,9 +168,9 @@ class ArticleContainer extends Component {
 	render() {
 		return(
 			<div>
-				<div onClick={this.displayCreate}>
-				CreateArticle
-				</div>
+				<button onClick={this.displayCreate}>
+				CreateArticle Here
+				</button>
 				{ this.state.modalShowing == false && this.state.displayCreate == true ?<CreateArticle 
 					addArticle={this.addArticle} 
 					displayIndex={this.displayIndex} /> : null}
@@ -193,7 +193,6 @@ class ArticleContainer extends Component {
 					: 
 					null
 				}
-				{this.state.modalShowing == false && this.state.displayShow ? <YourArticle/> : null}
 			</div>
 
 		)
