@@ -193,7 +193,7 @@ class ArticleContainer extends Component {
 					: 
 					null
 				}
-				{this.state.modalShowing == false && this.state.displayShow<Article/>
+				{this.state.modalShowing == false && this.state.displayShow ? <YourArticle/> : null}
 			</div>
 
 		)

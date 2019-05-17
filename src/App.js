@@ -6,6 +6,7 @@ import Register from './Register'
 import Login from './Login'
 import NewsContainer from './NewsContainer'
 import Logout from './Logout'
+import Button from 'react-bootstrap/Button';
 
 
 class App extends Component {

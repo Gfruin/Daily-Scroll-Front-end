@@ -9,7 +9,9 @@ class YourArticle extends Component {
 	}
 	render(){
 		return(
-
+			<div>
+				Your Article
+			</div>
 
 			)
 	}
