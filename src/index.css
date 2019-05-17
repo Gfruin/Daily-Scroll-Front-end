@@ -27,3 +27,8 @@ code {
 .description {
 	font-size: 18px;
 }
+
+.image {
+	max-width: 400px;
+	max-height: 400px;
+}

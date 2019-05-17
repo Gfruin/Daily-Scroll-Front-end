@@ -5,6 +5,7 @@ const NewsArticles = (props) => {
 		return (
 			<div key={i}>
 				<main className="articleView"><br/>
+					<img  className="image" src={newsArticle.image}></img>
 					<h3>{newsArticle.title}</h3>
 					<p className="source"> Source: {newsArticle.source}</p><br/>
 					<p className="description"> Description: {newsArticle.description}</p><br/>
