@@ -32,6 +32,7 @@ class Register extends Component {
 
 			// }
 			this.props.hideResults()
+			this.props.login()
 
 		} catch(err) {
 			console.log(err);
