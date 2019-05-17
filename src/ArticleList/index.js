@@ -8,6 +8,7 @@ const Articles = (props) => {
 				<span>{article.description}</span><br/>
 				<button onClick={props.deleteArticle.bind(null, article._id)}>Delete</button>
 				<button onClick={props.showModal.bind(null, article)}>Edit</button>
+				<button onClick={props.displayShow}> Show Article</button>
 			</li>
 
 		)

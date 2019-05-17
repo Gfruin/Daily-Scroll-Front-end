@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CreateArticle from '../CreateArticle/'
 import Articles from '../ArticleList'
 import EditArticle from '../EditArticle'
+import YourArticle from '../Article'
 
 class ArticleContainer extends Component {
 	constructor() {
@@ -32,7 +33,7 @@ class ArticleContainer extends Component {
 			}
 			const articlesParsed = await response.json()
 			this.setState({articles: articlesParsed.data})
-
+			console.log(this.state.articles);
 		} catch(err) {
 			console.log(err)
 		}
@@ -129,6 +130,9 @@ class ArticleContainer extends Component {
 			console.log(err)
 		}
 	}
+	// grabArticle = (e) => {
+	// 	let yourArticle = this.state.articles.slice(this.currentTarget)
+	// }
 	displayShow = () => {
 		this.setState({
 			displayShow: true,
@@ -173,6 +177,7 @@ class ArticleContainer extends Component {
 				 { this.state.modalShowing == false && this.state.displayIndex == true ? <Articles 
 					articles={this.state.articles} 
 					showModal={this.showModal}
+					displayShow={this.displayShow}
 					deleteArticle={this.deleteArticle} /> : null }
 
 
