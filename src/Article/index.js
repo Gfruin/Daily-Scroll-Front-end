@@ -7,6 +7,12 @@ class YourArticle extends Component {
 		// article: article
 		}
 	}
+	render(){
+		return(
+
+
+			)
+	}
 }
 
 
